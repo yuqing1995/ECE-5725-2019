@@ -1,0 +1,8 @@
+#!/bin/bash
+#Qing Yu (qy95), Weiran Wang (ww463), Lab1, 9/11/2018
+echo "Running the video"
+
+sudo SDL_VIDEODRIVER=fbcon SDL_FBDEV=/dev/fb1 mplayer -vo sdl -framedrop -input file=/home/pi/video_fifo bigbuckbunny320p.mp4 & 
+
+echo "Running the control &"
+python video_control.py &
